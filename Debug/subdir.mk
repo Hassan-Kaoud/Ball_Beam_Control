@@ -4,18 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../ADC_program.c \
 ../CLCD_program.c \
 ../DIO_program.c \
 ../UART_program.c \
 ../main.c 
 
 OBJS += \
+./ADC_program.o \
 ./CLCD_program.o \
 ./DIO_program.o \
 ./UART_program.o \
 ./main.o 
 
 C_DEPS += \
+./ADC_program.d \
 ./CLCD_program.d \
 ./DIO_program.d \
 ./UART_program.d \
