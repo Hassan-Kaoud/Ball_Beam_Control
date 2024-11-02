@@ -1,114 +1,112 @@
-/****************************************************/
-/********** SWC : DIO *******************************/
-/********** Date : 13 August 2024 *******************/
-/********** Author : Yousef Ahmad *******************/
-/********** Version :1.0          *******************/
-
-
+/*****************************************************/
+/********** SWC : TIMER0 *****************************/
+/********** Date : 30 August 2024 ********************/
+/********** Author : AHMED MOHAMED *******************/
+/********** Version :1.0          ********************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
 #include "TIMER0_interface.h"
-#include "TIMER0_config.h"
 #include "TIMER0_private.h"
-static void (*GlobalPtrFuncOVF)(void)=NULL;
-static void (*GlobalPtrFuncCMP)(void)=NULL;
-void TIMER0_voidINIT(void)
+#include "TIMER0_config.h"
+
+static void(*GlobalPtrFuncCMP)(void)=NULL;
+static void(*GlobalPtrFuncOVF)(void)=NULL;
+
+void TIMER0_voidInit(void)
 {
-	// CTC OR OVF
-#if TIMER_MODE==OVF_MODE
+	//  CTC OR OVF
+#if TIMER0_MODE == OVF_MODE
 	CLR_BIT(TCCR0,TCCR0_WGM00);
 	CLR_BIT(TCCR0,TCCR0_WGM01);
-#elif TIMER_MODE==CTCMODE
-
+#elif TIMER0_MODE == CTC_MODE
 	CLR_BIT(TCCR0,TCCR0_WGM00);
 	SET_BIT(TCCR0,TCCR0_WGM01);
+
 #else
 #error("Wrong Mode")
 #endif
-
-
-	//ENABLE INT _>MODE
-
-#if INT_SRC==OVF_MODE
+	// ENABLE INT -> MODE
+#if INT_SRC == OVF_MODE
 	SET_BIT(TIMSK,TIMSK_TOIE0);
-#elif  INT_SRC==CTCMODE
+#elif INT_SRC == CTC_MODE
 	SET_BIT(TIMSK,TIMSK_OCIE0);
 #else
-#error("wrong mode")
-	//PreSCALER
+#error("Wrong Int Mode")
 #endif
-#if PRE_SCALER ==NO_DIV
-	TCCR0&=0b11111000;
-	TCCR0|=NO_DIV;
-#elif PRE_SCALER ==DIV_8
-	TCCR0&=0b11111000;
-	TCCR0|=DIV_8;
-#elif PRE_SCALER ==DIV_64
-	TCCR0&=0b11111000;
-	TCCR0|=DIV_64;
-#elif PRE_SCALER ==DIV_256
-	TCCR0&=0b11111000;
-	TCCR0|=DIV_256;
-#elif PRE_SCALER ==DIV_1024
-	TCCR0&=0b11111000;
-	TCCR0|=DIV_1024;
+	// PRESCALLER
+#if PRE_SCALLER == NO_DIV
+	TCCR0 &= 0b11111000;
+	TCCR0 |= NO_DIV;
+#elif PRE_SCALLER == DIV_8
+	TCCR0 &= 0b11111000;
+	TCCR0 |= DIV_8;
+#elif PRE_SCALLER == DIV_64
+	TCCR0 &= 0b11111000;
+	TCCR0 |= DIV_64;
+#elif PRE_SCALLER == DIV_256
+	TCCR0 &= 0b11111000;
+	TCCR0 |= DIV_256;
+#elif PRE_SCALLER == DIV_1024
+	TCCR0 &= 0b11111000;
+	TCCR0 |= DIV_1024;
 #else
-#error("wrong")
+#error("Wrong PreScaler")
 #endif
 }
-void TIMER0_voidPreLoadValue(u8 Copy_u8Ticks)
+void TIMER0_voidSetPreLoadValue(u8 Copy_u8Ticks)
 {
 	TCNT0=Copy_u8Ticks;
 }
-
 void TIMER0_voidSetCmpValue(u8 Copy_u8Ticks)
 {
 	OCR0=Copy_u8Ticks;
 }
-Std_err_e TIMER0_e_setCallBackOVF(void(*Pfunc)(void)){
-	Std_err_e Local_e_error_states =OK;
-	if(Pfunc!=NULL){
-
-		GlobalPtrFuncOVF=Pfunc;
+Std_err_e TIMER0_e_SetCallBackOVF(void(*PtrFunc)(void))
+{
+	Std_err_e Local_e_ErrorStatus=OK;
+	if(PtrFunc != NULL)
+	{
+		GlobalPtrFuncOVF=PtrFunc;
 	}
 	else
 	{
-
-		Local_e_error_states=NOK;
+		Local_e_ErrorStatus=NOK;
 	}
-
-
-	return Local_e_error_states;
+	return Local_e_ErrorStatus;
 }
-Std_err_e TIMER0_e_setCallBackCMP(void(*Pfunc)(void)){
 
-	Std_err_e Local_e_error_states =OK;
-	if(Pfunc!=NULL){
-
-		GlobalPtrFuncCMP=Pfunc;
+Std_err_e TIMER0_e_SetCallBackCMP(void(*PtrFunc)(void))
+{
+	Std_err_e Local_e_ErrorStatus=OK;
+	if(PtrFunc != NULL)
+	{
+		GlobalPtrFuncCMP=PtrFunc;
 	}
 	else
 	{
-
-		Local_e_error_states=NOK;
+		Local_e_ErrorStatus=NOK;
 	}
-
-
-	return Local_e_error_states;
+	return Local_e_ErrorStatus;
 }
-
-void __vector_11(void)  __attribute__((signal));
-
+void TIMER0_voidCTCEnable(void)
+{
+  SET_BIT(TIMSK,TIMSK_OCIE0);
+}
+void TIMER0_voidCTCDisable(void)
+{
+	CLR_BIT(TIMSK,TIMSK_OCIE0);
+}
+// ISR OVF
+void __vector_11(void) __attribute__((signal));
 void __vector_11(void)
 {
+	// INVOKE FUNCTION
 	GlobalPtrFuncOVF();
 }
-void __vector_10(void)  __attribute__((signal));
-
+//ISR CTC
+void __vector_10(void) __attribute__((signal));
 void __vector_10(void)
 {
 	GlobalPtrFuncCMP();
 }
-
-

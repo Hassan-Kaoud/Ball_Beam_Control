@@ -7,21 +7,36 @@ C_SRCS += \
 ../ADC_program.c \
 ../CLCD_program.c \
 ../DIO_program.c \
+../EXTI_program.c \
+../GI_program.c \
+../Servo.c \
+../TIMER0_program.c \
 ../UART_program.c \
+../Ultrasonic.c \
 ../main.c 
 
 OBJS += \
 ./ADC_program.o \
 ./CLCD_program.o \
 ./DIO_program.o \
+./EXTI_program.o \
+./GI_program.o \
+./Servo.o \
+./TIMER0_program.o \
 ./UART_program.o \
+./Ultrasonic.o \
 ./main.o 
 
 C_DEPS += \
 ./ADC_program.d \
 ./CLCD_program.d \
 ./DIO_program.d \
+./EXTI_program.d \
+./GI_program.d \
+./Servo.d \
+./TIMER0_program.d \
 ./UART_program.d \
+./Ultrasonic.d \
 ./main.d 
 
 

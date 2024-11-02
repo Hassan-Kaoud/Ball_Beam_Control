@@ -1,25 +1,30 @@
-/****************************************************/
-/********** SWC : DIO *******************************/
-/********** Date : 13 August 2024 *******************/
-/********** Author : Yousef Ahmad *******************/
-/********** Version :1.0          *******************/
-
+/*****************************************************/
+/********** SWC : TIMER0 *****************************/
+/********** Date : 30 August 2024 ********************/
+/********** Author : AHMED MOHAMED *******************/
+/********** Version :1.0          ********************/
 #ifndef TIMER0_CONFIG_H_
 #define TIMER0_CONFIG_H_
+
 /*
+ * Options:
  * OVF_MODE
- * CTCMODE
- *
- * */
+ * CTC_MODE
+ */
 
-#define TIMER_MODE CTCMODE
+#define TIMER0_MODE  CTC_MODE
+#define INT_SRC      CTC_MODE
 
-#define INT_SRC  CTCMODE
+/*
+ * Options:
+ * NO_DIV
+ * DIV_8
+ * DIV_64
+ * DIV_256
+ * DIV_1024
+ */
 
-
-#define PRE_SCALER  DIV_64
-
-
+#define PRE_SCALLER  DIV_64
 
 
 
