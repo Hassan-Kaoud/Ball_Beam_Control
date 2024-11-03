@@ -23,7 +23,11 @@ d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../
 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
                               ./CLCD_program.o (__ltsf2)
 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_si_to_sf.o)
+<<<<<<< HEAD
                               ./servo.o (__floatsisf)
+=======
+                              ./Servo.o (__floatsisf)
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
                               d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__fixsfsi)
 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
@@ -60,9 +64,16 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
 LOAD ./ADC_program.o
 LOAD ./CLCD_program.o
 LOAD ./DIO_program.o
+<<<<<<< HEAD
 LOAD ./GI_program.o
+=======
+LOAD ./EXTI_program.o
+LOAD ./GI_program.o
+LOAD ./Servo.o
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
 LOAD ./TIMER0_program.o
 LOAD ./UART_program.o
+LOAD ./Ultrasonic.o
 LOAD ./main.o
 LOAD ./servo.o
 LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
@@ -159,7 +170,11 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
 .rela.plt
  *(.rela.plt)
 
+<<<<<<< HEAD
 .text           0x00000000     0x2336
+=======
+.text           0x00000000     0x2910
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
  *(.vectors)
  .vectors       0x00000000       0x54 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -215,12 +230,9 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
  *(.init9)
  *(.text)
  .text          0x0000008e        0x4 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
-                0x0000008e                __vector_1
                 0x0000008e                __vector_12
                 0x0000008e                __bad_interrupt
                 0x0000008e                __vector_6
-                0x0000008e                __vector_3
-                0x0000008e                __vector_11
                 0x0000008e                __vector_13
                 0x0000008e                __vector_17
                 0x0000008e                __vector_19
@@ -228,19 +240,24 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
                 0x0000008e                __vector_5
                 0x0000008e                __vector_4
                 0x0000008e                __vector_9
-                0x0000008e                __vector_2
                 0x0000008e                __vector_15
                 0x0000008e                __vector_8
                 0x0000008e                __vector_14
-                0x0000008e                __vector_10
                 0x0000008e                __vector_18
                 0x0000008e                __vector_20
  .text          0x00000092        0x0 ./ADC_program.o
  .text          0x00000092        0x0 ./CLCD_program.o
  .text          0x00000092        0x0 ./DIO_program.o
+<<<<<<< HEAD
  .text          0x00000092        0x0 ./GI_program.o
+=======
+ .text          0x00000092        0x0 ./EXTI_program.o
+ .text          0x00000092        0x0 ./GI_program.o
+ .text          0x00000092        0x0 ./Servo.o
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
  .text          0x00000092        0x0 ./TIMER0_program.o
  .text          0x00000092        0x0 ./UART_program.o
+ .text          0x00000092        0x0 ./Ultrasonic.o
  .text          0x00000092        0x0 ./main.o
  .text          0x00000092        0x0 ./servo.o
  .text          0x00000092        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
@@ -330,6 +347,7 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
  .text.DIO_voidTogglePinValue
                 0x00001da6      0x104 ./DIO_program.o
                 0x00001da6                DIO_voidTogglePinValue
+<<<<<<< HEAD
  .text.GI_voidEnable
                 0x00001eaa       0x1c ./GI_program.o
                 0x00001eaa                GI_voidEnable
@@ -369,6 +387,92 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
  .fini9         0x00002332        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
                 0x00002332                exit
                 0x00002332                _exit
+=======
+ .text.EXIT_voidEnableDisable
+                0x00001eaa      0x10c ./EXTI_program.o
+                0x00001eaa                EXIT_voidEnableDisable
+ .text.EXIT_voidSetSenseControl
+                0x00001fb6      0x200 ./EXTI_program.o
+                0x00001fb6                EXIT_voidSetSenseControl
+ .text.EXTI_voidSetCallBack
+                0x000021b6       0xa2 ./EXTI_program.o
+                0x000021b6                EXTI_voidSetCallBack
+ .text.__vector_1
+                0x00002258       0x5a ./EXTI_program.o
+                0x00002258                __vector_1
+ .text.__vector_2
+                0x000022b2       0x5a ./EXTI_program.o
+                0x000022b2                __vector_2
+ .text.__vector_3
+                0x0000230c       0x5a ./EXTI_program.o
+                0x0000230c                __vector_3
+ .text.GI_voidEnable
+                0x00002366       0x1c ./GI_program.o
+                0x00002366                GI_voidEnable
+ .text.GI_voidDisable
+                0x00002382       0x1c ./GI_program.o
+                0x00002382                GI_voidDisable
+ .text.Timer1_Init
+                0x0000239e       0x38 ./Servo.o
+                0x0000239e                Timer1_Init
+ .text.Set_Servo_Angle
+                0x000023d6       0x78 ./Servo.o
+                0x000023d6                Set_Servo_Angle
+ .text.TIMER0_voidInit
+                0x0000244e       0x54 ./TIMER0_program.o
+                0x0000244e                TIMER0_voidInit
+ .text.TIMER0_voidSetPreLoadValue
+                0x000024a2       0x1c ./TIMER0_program.o
+                0x000024a2                TIMER0_voidSetPreLoadValue
+ .text.TIMER0_voidSetCmpValue
+                0x000024be       0x1c ./TIMER0_program.o
+                0x000024be                TIMER0_voidSetCmpValue
+ .text.TIMER0_e_SetCallBackOVF
+                0x000024da       0x3a ./TIMER0_program.o
+                0x000024da                TIMER0_e_SetCallBackOVF
+ .text.TIMER0_e_SetCallBackCMP
+                0x00002514       0x3a ./TIMER0_program.o
+                0x00002514                TIMER0_e_SetCallBackCMP
+ .text.TIMER0_voidCTCEnable
+                0x0000254e       0x1c ./TIMER0_program.o
+                0x0000254e                TIMER0_voidCTCEnable
+ .text.TIMER0_voidCTCDisable
+                0x0000256a       0x1c ./TIMER0_program.o
+                0x0000256a                TIMER0_voidCTCDisable
+ .text.__vector_11
+                0x00002586       0x5a ./TIMER0_program.o
+                0x00002586                __vector_11
+ .text.__vector_10
+                0x000025e0       0x5a ./TIMER0_program.o
+                0x000025e0                __vector_10
+ .text.UART_voidInit
+                0x0000263a       0x66 ./UART_program.o
+                0x0000263a                UART_voidInit
+ .text.UART_voidSendData
+                0x000026a0       0x34 ./UART_program.o
+                0x000026a0                UART_voidSendData
+ .text.UART_u8ReceiveData
+                0x000026d4       0x1e ./UART_program.o
+                0x000026d4                UART_u8ReceiveData
+ .text.main     0x000026f2      0x12a ./main.o
+                0x000026f2                main
+ .text.libgcc   0x0000281c       0x3e d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x0000281c                __mulsi3
+ .text.libgcc   0x0000285a       0x44 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000285a                __udivmodsi4
+ .text.libgcc   0x0000289e        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x0000289e        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000289e        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000289e       0x38 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x0000289e                __prologue_saves__
+ .text.libgcc   0x000028d6       0x36 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x000028d6                __epilogue_restores__
+                0x0000290c                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000290c        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000290c                exit
+                0x0000290c                _exit
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -387,20 +491,35 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
  *(.fini1)
  *(.fini1)
  *(.fini0)
+<<<<<<< HEAD
  .fini0         0x00002332        0x4 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
                 0x00002336                _etext = .
 
 .data           0x00800060      0x10a load address 0x00002336
+=======
+ .fini0         0x0000290c        0x4 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00002910                _etext = .
+
+.data           0x00800060      0x10a load address 0x00002910
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  .data          0x00800060        0x0 ./ADC_program.o
  .data          0x00800060        0x0 ./CLCD_program.o
  .data          0x00800060        0x0 ./DIO_program.o
+<<<<<<< HEAD
  .data          0x00800060        0x0 ./GI_program.o
+=======
+ .data          0x00800060        0x0 ./EXTI_program.o
+ .data          0x00800060        0x0 ./GI_program.o
+ .data          0x00800060        0x0 ./Servo.o
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
  .data          0x00800060        0x0 ./TIMER0_program.o
  .data          0x00800060        0x0 ./UART_program.o
+ .data          0x00800060        0x0 ./Ultrasonic.o
  .data          0x00800060        0x0 ./main.o
  .data          0x00800060        0x0 ./servo.o
  .data          0x00800060        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
@@ -437,18 +556,32 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
                 0x0080016a                _edata = .
                 0x0080016a                PROVIDE (__data_end, .)
 
+<<<<<<< HEAD
 .bss            0x0080016a        0x8
+=======
+.bss            0x0080016a        0xe
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
                 0x0080016a                PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x0080016a        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  .bss           0x0080016a        0x0 ./ADC_program.o
  .bss           0x0080016a        0x0 ./CLCD_program.o
  .bss           0x0080016a        0x0 ./DIO_program.o
+<<<<<<< HEAD
  .bss           0x0080016a        0x0 ./GI_program.o
  .bss           0x0080016a        0x0 ./TIMER0_program.o
  .bss           0x0080016a        0x0 ./UART_program.o
  .bss           0x0080016a        0x0 ./main.o
  .bss           0x0080016a        0x0 ./servo.o
+=======
+ .bss           0x0080016a        0x0 ./EXTI_program.o
+ .bss           0x0080016a        0x0 ./GI_program.o
+ .bss           0x0080016a        0x0 ./Servo.o
+ .bss           0x0080016a        0x0 ./TIMER0_program.o
+ .bss           0x0080016a        0x0 ./UART_program.o
+ .bss           0x0080016a        0x0 ./Ultrasonic.o
+ .bss           0x0080016a        0x0 ./main.o
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
  .bss           0x0080016a        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
  .bss           0x0080016a        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
  .bss           0x0080016a        0x0 d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
@@ -475,6 +608,7 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
                 0x0080016a        0x2 ./ADC_program.o
  .bss.Global_voidPtrFunc
                 0x0080016c        0x2 ./ADC_program.o
+<<<<<<< HEAD
  .bss.GlobalPtrFuncOVF
                 0x0080016e        0x2 ./TIMER0_program.o
  .bss.GlobalPtrFuncCMP
@@ -490,6 +624,25 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
                 0x00800172                PROVIDE (__noinit_end, .)
                 0x00800172                _end = .
                 0x00800172                PROVIDE (__heap_start, .)
+=======
+ .bss.GlobalPtrTofunc
+                0x0080016e        0x6 ./EXTI_program.o
+ .bss.GlobalPtrFuncCMP
+                0x00800174        0x2 ./TIMER0_program.o
+ .bss.GlobalPtrFuncOVF
+                0x00800176        0x2 ./TIMER0_program.o
+ *(COMMON)
+                0x00800178                PROVIDE (__bss_end, .)
+                0x00002910                __data_load_start = LOADADDR (.data)
+                0x00002a1a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800178        0x0
+                0x00800178                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800178                PROVIDE (__noinit_end, .)
+                0x00800178                _end = .
+                0x00800178                PROVIDE (__heap_start, .)
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -507,13 +660,18 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
 .signature
  *(.signature*)
 
+<<<<<<< HEAD
 .stab           0x00000000     0x1d58
+=======
+.stab           0x00000000     0x2544
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
  *(.stab)
  .stab          0x00000000      0x504 ./ADC_program.o
  .stab          0x00000504      0xa2c ./CLCD_program.o
                                 0xad4 (size before relaxing)
  .stab          0x00000f30      0x4d4 ./DIO_program.o
                                 0x57c (size before relaxing)
+<<<<<<< HEAD
  .stab          0x00001404      0x144 ./GI_program.o
                                 0x1ec (size before relaxing)
  .stab          0x00001548       0xfc ./TIMER0_program.o
@@ -528,6 +686,26 @@ LOAD d:/embedded systems diploma/03-imt sdk/03- imt sdk/imt_sdk_win_64/winavr/bi
 .stabstr        0x00000000      0xfd4
  *(.stabstr)
  .stabstr       0x00000000      0xfd4 ./ADC_program.o
+=======
+ .stab          0x00001404      0x4c8 ./EXTI_program.o
+                                0x570 (size before relaxing)
+ .stab          0x000018cc      0x144 ./GI_program.o
+                                0x1ec (size before relaxing)
+ .stab          0x00001a10      0x21c ./Servo.o
+                                0x3a8 (size before relaxing)
+ .stab          0x00001c2c      0x3b4 ./TIMER0_program.o
+                                0x45c (size before relaxing)
+ .stab          0x00001fe0      0x228 ./UART_program.o
+                                0x2d0 (size before relaxing)
+ .stab          0x00002208       0xd8 ./Ultrasonic.o
+                                 0xe4 (size before relaxing)
+ .stab          0x000022e0      0x264 ./main.o
+                                0x4c8 (size before relaxing)
+
+.stabstr        0x00000000     0x1397
+ *(.stabstr)
+ .stabstr       0x00000000     0x1397 ./ADC_program.o
+>>>>>>> 1372b78cc79d5e1be29907a60bd818f15acc2acb
 
 .stab.excl
  *(.stab.excl)
