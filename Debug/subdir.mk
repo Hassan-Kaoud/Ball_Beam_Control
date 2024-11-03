@@ -7,22 +7,31 @@ C_SRCS += \
 ../ADC_program.c \
 ../CLCD_program.c \
 ../DIO_program.c \
+../GI_program.c \
+../TIMER0_program.c \
 ../UART_program.c \
-../main.c 
+../main.c \
+../servo.c 
 
 OBJS += \
 ./ADC_program.o \
 ./CLCD_program.o \
 ./DIO_program.o \
+./GI_program.o \
+./TIMER0_program.o \
 ./UART_program.o \
-./main.o 
+./main.o \
+./servo.o 
 
 C_DEPS += \
 ./ADC_program.d \
 ./CLCD_program.d \
 ./DIO_program.d \
+./GI_program.d \
+./TIMER0_program.d \
 ./UART_program.d \
-./main.d 
+./main.d \
+./servo.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
