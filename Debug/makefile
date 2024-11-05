@@ -8,6 +8,18 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include MCAL/UART/subdir.mk
+-include MCAL/Timer\ 1/subdir.mk
+-include MCAL/Timer\ 0/subdir.mk
+-include MCAL/Interrupt/subdir.mk
+-include MCAL/DIO/subdir.mk
+-include HAL/Ultrasonic\ Sensor/subdir.mk
+-include HAL/Servo\ Motor/subdir.mk
+-include HAL/LED/subdir.mk
+-include HAL/LCD/subdir.mk
+-include HAL/IR_Sensor/subdir.mk
+-include HAL/H_Bridge/subdir.mk
+-include HAL/Buzzer/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -32,6 +44,9 @@ endif
 LSS += \
 Ball_Beam_Control.lss \
 
+FLASH_IMAGE += \
+Ball_Beam_Control.hex \
+
 SIZEDUMMY += \
 sizedummy \
 
@@ -53,6 +68,12 @@ Ball_Beam_Control.lss: Ball_Beam_Control.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Ball_Beam_Control.hex: Ball_Beam_Control.elf
+	@echo 'Create Flash image (ihex format)'
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Ball_Beam_Control.elf  "Ball_Beam_Control.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 sizedummy: Ball_Beam_Control.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega32 Ball_Beam_Control.elf
@@ -61,10 +82,10 @@ sizedummy: Ball_Beam_Control.elf
 
 # Other Targets
 clean:
-	-$(RM) $(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Ball_Beam_Control.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Ball_Beam_Control.elf
 	-@echo ' '
 
-secondary-outputs: $(LSS) $(SIZEDUMMY)
+secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
 .SECONDARY:

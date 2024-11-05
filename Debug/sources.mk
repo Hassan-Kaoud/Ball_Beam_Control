@@ -8,6 +8,7 @@ ASM_SRCS :=
 C_SRCS := 
 S_UPPER_SRCS := 
 O_SRCS := 
+FLASH_IMAGE := 
 ELFS := 
 OBJS := 
 ASM_DEPS := 
@@ -19,5 +20,17 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+HAL/Buzzer \
+HAL/H_Bridge \
+HAL/IR_Sensor \
+HAL/LCD \
+HAL/LED \
+HAL/Servo\ Motor \
+HAL/Ultrasonic\ Sensor \
+MCAL/DIO \
+MCAL/Interrupt \
+MCAL/Timer\ 0 \
+MCAL/Timer\ 1 \
+MCAL/UART \
 . \
 
